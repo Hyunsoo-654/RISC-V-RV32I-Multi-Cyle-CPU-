@@ -11,3 +11,25 @@ The CPU executes RISC-V RV32I instructions in five stages:
 5. WB (Write back)
 
 The purpose of this project is to better understand CPU micro-architecture, instruction execution flow, and control signal generation.
+
+## Features
+- Supports the full RV32I instruction set
+- FSM-based control unit with states: FETCH, DECODE, EXECUTE, MEM, WB
+- Separate modules:
+  - ControlUnit
+  - DataPath
+  - ROM 
+  - RAM
+  - CPU
+  - MCU
+
+## Project Structure
+- `src/` : Verilog/SystemVerilog source files
+  - `MCU.sv` : TOP
+  - `CPU_RV32I.sv` : CPU module
+  - `ControlUnit.sv` : FSM-based control
+  - `DataPath.sv` : Data path implementation
+  - `RAM.sv` : Data memory module
+  - `ROM.sv` : Instruction memory module
+- `testbench/` : Testbench for simulation
+- `code.mem` : Example machine code for testing
